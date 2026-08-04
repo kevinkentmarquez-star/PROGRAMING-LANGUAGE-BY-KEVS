@@ -1,0 +1,13 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string name = "kevin";
+    int age = 20;
+    double height = 5.3;
+    bool happy = true;
+    bool sad = false;
+    cout << name << " is " << age << " years old and " << height << " feet tall " << happy << sad;
+    return 0;
+}

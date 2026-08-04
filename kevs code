@@ -12,3 +12,54 @@ class Comparator:
 
 cm = Comparator()
 cm.compare()
+
+python 
+name = str("Keven Kent P Marquez")
+print(name)
+age = 20
+print(age)
+weight = 52.50
+print(weight)
+stress = True
+happy = False
+
+print(stress)
+print(happy)
+
+c#
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string name = "Keven Kent P Marquez";
+        Console.WriteLine(name);
+        int age = 18;
+        Console.WriteLine(age);
+        double digits = 24.24;
+        Console.WriteLine(digits);
+        bool stress = true;
+        bool anxious = false;
+        Console.WriteLine(stress);
+        Console.WriteLine(anxious);
+    }
+}
+
+c++
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string name = "kevin";
+    int age = 20;
+    double height = 5.3;
+    bool happy = true;
+    bool sad = false;
+    cout << name << " is " << age << " years old and " << height << " feet tall " << happy << sad;
+    return 0;
+}

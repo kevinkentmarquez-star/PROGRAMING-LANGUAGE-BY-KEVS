@@ -19,3 +19,43 @@ public class HelloWorld
         Console.WriteLine(anxious);
     }
 }
+
+Calculator C#
+using System;
+
+while (true)
+{
+    Console.Write("\nEnter operator (+, -, *, /, or 'exit' to quit): ");
+    string operation = Console.ReadLine().ToLower();
+
+    if (operation == "exit")
+    {
+        Console.WriteLine("Exiting calculator. Goodbye!");
+        break;
+    }
+
+    Console.Write("Enter first number: ");
+    double num1 = Convert.ToDouble(Console.ReadLine());
+
+    Console.Write("Enter second number: ");
+    double num2 = Convert.ToDouble(Console.ReadLine());
+
+    switch (operation)
+    {
+        case "+":
+            Console.WriteLine($"Result: {num1 + num2}");
+            break;
+        case "-":
+            Console.WriteLine($"Result: {num1 - num2}");
+            break;
+        case "*":
+            Console.WriteLine($"Result: {num1 * num2}");
+            break;
+        case "/":
+            Console.WriteLine(num2 == 0 ? "Error: Division by zero." : $"Result: {num1 / num2}");
+            break;
+        default:
+            Console.WriteLine("Invalid operator. Please try again.");
+            break;
+    }
+}

@@ -1,0 +1,18 @@
+using System;
+
+public class HelloWorld {
+    public static void Main(string[] args) {
+        Console.Write("Enter a username: ");
+        string username = Console.ReadLine();
+        
+        Console.Write("Enter age: ");
+        string ageInput = Console.ReadLine();
+        
+        // int.TryParse returns true if conversion succeeds, and outputs the result into 'age'
+        if (int.TryParse(ageInput, out int age)) {
+            Console.WriteLine("Your name is " + username + ". Your age is " + age);
+        } else {
+            Console.WriteLine("Invalid input! Please enter a valid numerical age.");
+        }
+    }
+}

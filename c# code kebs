@@ -59,3 +59,29 @@ while (true)
             break;
     }
 }
+
+=======================================================================
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter your name: ");
+        string name = Console.ReadLine();
+
+        Console.Write("Enter your age: ");
+        string age = Console.ReadLine();
+
+        Console.Write("Enter your address: ");
+        string address = Console.ReadLine();
+
+        Console.Write("Enter your weight (in lbs): ");
+        string weight = Console.ReadLine();
+
+        Console.Write("Enter your height (in feet): ");
+        string height = Console.ReadLine();
+
+        Console.WriteLine($"\nHello, my name is {name}. I am {age} years old, I live at {address}, I am {height} feet tall, and I weigh {weight}.");
+    }
+}

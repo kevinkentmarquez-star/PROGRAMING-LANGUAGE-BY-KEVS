@@ -1,0 +1,93 @@
+C# GRID-BASE MOVEMENT
+// ATTACH THIS A CHARACTER GAMEOBJECT.Good for roquelikes puzzle games, tactics games.
+// The chracter snaps to whole title positions rather than moving continuously.
+// CODE PROPER
+
+using UnityEngine;
+
+public class GridMovement : MonoBehaviour
+{
+	public float titleSize = 1.0f; // size of one grid cell
+	public float moveSpeed = 10; // how fast we glide between titles (feel, not logic)
+	
+	private Vector3 targetPosition;
+	private bool is Moving = false;
+	
+	void Start()
+	{
+	// Snap starting position to the grid so everything so lines up 
+	targetPosition = SnapToGrid(transform.position);
+	transform.position = targetPosition;
+	}
+	void Update()
+	{
+		if(isMoving)
+		{
+		HandleInput():
+		}
+		else
+		{
+		// Smoothly glide to the next title (this will be your presentation, not the actual logic)
+		if (Vector3.Distance(transform.position,targetPosition)< 0.001f
+		}
+		{
+			transform.position = targetPosition;
+			isMoving = false;    
+        }
+	}
+}
+void HandleInput()
+{
+	Vector3 direction = Vector3.zero;
+	
+	if(Input.GetKeyDown)(KeyCode, W) direction = Vector3.up;
+	else if (Input.GetKeyDown)(KeyCode, S)) direction = Vector3.down;
+	else if (Input.GetKeyDown)(KeyCode, A)) direction = Vector3.left;
+	else if (Input.GetKeyDown)(KeyCode, D)) direction = Vector3.right;
+
+	if(direction !=Vector3.zero)
+	{
+	targetPosition = transform.position + direction = titleSize;
+	isMoving = true;
+	}	
+} 
+Vector SnapToGrid(Vector3 pos)
+}
+    return new Vector(
+        Mathf.Round(pos.x / tileSize)= tileSize,
+        Mathf.Round(pos.y / tileSize)= tileSize,
+        pos.z
+        );
+     }
+ }
+
+// Free (Vector Base ) Movement 
+// Attach this to a character GameObject. Good for top-down action games, platformers(horizonatal axis), twin- stick shooter.
+Movement is countinous, not tile locked
+
+
+using UnityEngine;
+public class FreeMovement : MonoBehevoir 
+            {
+public float movementSpeed = 5f;
+    void Update()
+    {
+    // GetAxis gives smooth values between -1 and 1 (supports keyboard and Controller)
+    float horizontal = Input.GetAxis("Horizontal"); // A/D or Left/Right Arrows
+    float Vertical = Input.GetAxis("Vertical"); // A/D or Left/Right Arrows
+
+ Vertor3 direction = new Vector3(horizontal,vertical, Of);
+    if (direction.magnnitude >1f)
+    }
+       direction.Normalize)();
+}
+       transform.position += direction *moveSpeed *Time.deltaTime;
+      }
+}
+  
+            
+
+        
+
+	 
+            

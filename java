@@ -28,6 +28,9 @@ public class Main {
     System.out.println("\n === STUDENT SUMMARY ===");
     System.out.println("Name: "+ name);
     System.out.println("Age: "+ age);
+    System.out.println("HCI SCORE: "+ hci);
+    System.out.println("CC103: "+ CC103);
+    System.out.println("NET2: "+ net2);
     System.out.printf("Average Score: % 2f\n", average);
 
     if (average >= 75.0) {

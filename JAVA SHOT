@@ -1,0 +1,79 @@
+import java.util.Scanner;
+
+public class StudentGradingSystem {
+    public static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        
+        int passedCount = 0;
+        int failedCount = 0;
+        int totalStudents = 0;
+
+        String choice;
+        do {
+            System.out.println("======================================");
+            System.out.println("STUDENT PERFORMANCE MONITORING SYSTEM");
+            System.out.println("======================================");
+
+
+            System.out.print("Please enter your student's name: ");
+            String name = scanner.nextLine();
+
+            double age = getValidNumber("Please enter your student's age: ", 1, 100);
+
+            double hciGrade = getValidNumber("Please enter your HCI grade (0-100): ", 0, 100);
+            double cc103Grade = getValidNumber("Please enter your CC103 grade (0-100): ", 0, 100);
+            double net2Grade = getValidNumber("Please enter your NET2 grade (0-100): ", 0, 100);
+
+            double totalScore = hciGrade + cc103Grade + net2Grade;
+            double average = totalScore / 3;
+            
+            String status = (average >= 75.0) ? "PASSED" : "FAILED";
+
+            if (status.equals("PASSED")) {
+                passedCount++;
+            } else {
+                failedCount++;
+            }
+            totalStudents++;
+
+            System.out.println("\n===Student Summary===");
+            System.out.println("Name: " + name);
+            System.out.printf("Age: %.0f\n", age);
+            System.out.printf("HCI: %.2f\n", hciGrade);
+            System.out.printf("CC103: %.2f\n", cc103Grade);
+            System.out.printf("NET2: %.2f\n", net2Grade);
+            System.out.printf("Average Score: %.2f\n", average);
+            System.out.println("Status: " + status);
+            System.out.println("===========================");
+
+            System.out.print("Do you want to enter another student's info? (Y/N): ");
+            choice = scanner.nextLine().trim().toLowerCase();
+
+        } while (choice.startsWith("y")); 
+        
+        System.out.println("\n=============================");
+        System.out.println("        Class Summary        ");
+        System.out.println("=============================");
+        System.out.println("TOTAL STUDENTS: " + totalStudents);
+        System.out.println("TOTAL PASSED STUDENTS: " + passedCount);
+        System.out.println("TOTAL FAILED STUDENTS: " + failedCount);
+
+
+        System.out.println("\nProgram terminated. Thank you!");
+        scanner.close();
+    }
+
+    public static double getValidNumber(String prompt, double min, double max) {
+        while (true) {
+            System.out.print(prompt);
+            try {
+                double input = Double.parseDouble(scanner.nextLine());
+                if (input >= min && input <= max) {
+                    return input;
+                }
+            } catch (NumberFormatException ignored) {}
+            System.out.println("Invalid input. Please enter a valid number between " + min + " and " + max + ".");
+        }
+    }
+}

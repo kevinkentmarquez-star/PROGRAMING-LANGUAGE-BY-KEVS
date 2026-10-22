@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String[] names = {"Anna", "Mark", "Jacob", "John", "Alice"};
+        int[] scores = {85, 95, 75, 86, 90};
+
+        Scanner scanner = new Scanner(System.in);
+        boolean keepRunning = true;
+
+        while (keepRunning) {
+            System.out.print("Enter a name to find their score: ");
+            String inputName = scanner.nextLine().trim();
+            boolean found = false;
+
+            for (int i = 0; i < names.length; i++) {
+                if (names[i].equalsIgnoreCase(inputName)) {
+                  
+                    System.out.println(names[i] + " is " + scores[i]);
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                System.out.println("Invalid: Name not found in the records.");
+            }
+
+     
+            while (true) {
+                System.out.print("\nDo you want to search for another name? (Y/N): ");
+                String choice = scanner.nextLine().trim().toLowerCase();
+
+                if (choice.equals("y") || choice.equals("yes")) {
+                    break; 
+                } else if (choice.equals("n") || choice.equals("no")) {
+                    keepRunning = false;
+                    System.out.println("Thank you for using the program!");
+                    break; 
+                } 
+                
+                System.out.println("Invalid input. Please type Yes/Y or No/N.");
+            }
+            System.out.println(); 
+        }
+        scanner.close();
+    }
+}

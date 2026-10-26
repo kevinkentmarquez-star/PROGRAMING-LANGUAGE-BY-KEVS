@@ -36,3 +36,25 @@ int main() {
 }
 // inverted pyramid 
 
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int rows = 8;
+    
+    for (int i = 1; i <= rows; i++) {
+        
+        for (int s = 1; s <= i - 1; s++) {
+            cout << "   "; 
+        }
+
+        for (int j = 1; j <= rows - i + 1; j++) {
+            cout << "  *";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+
+// left pyramid 90 angle 

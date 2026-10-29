@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class GradeCalculator {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.print("Enter a Grade for Java(0-100): ");
+    double javaGrade = scanner.nextDouble();
+
+    System.out.print("Enter a Grade for Python(0-100): ");
+    double pythonGrade = scanner.nextDouble();
+
+    System.out.print("Enter a Grade for C++(0-100): ");
+    double cppGrade = scanner.nextDouble();
+
+    double average = (javaGrade + pythonGrade + cppGrade) / 3.0;
+    System.out.printf("Average: %2f\n", average);
+
+    if(average >= 75) {
+      System.out.println("Status: PASSED");
+    } else {
+      System.out.println("Status: Failed");
+    }
+    scanner.close();
+  } 
+}
